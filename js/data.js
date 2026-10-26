@@ -1,5 +1,6 @@
 // Picture decks for the memory game. Each subject lists possible cards.
-// Regular subjects use emoji strings; the colors subject uses swatch objects.
+// Regular subjects use emoji strings; the colors subject uses swatch objects;
+// image subjects list file names inside `dir`.
 
 export const MEMORY_SUBJECTS = [
   {
@@ -30,6 +31,19 @@ export const MEMORY_SUBJECTS = [
       "🍎", "🍌", "🍇", "🍓", "🍊", "🍉", "🍑", "🍒", "🥕", "🌽",
       "🍅", "🥦", "🍕", "🍔", "🌭", "🥪", "🍦", "🍩", "🍪", "🎂",
       "🧁", "🍭", "🍿", "🥨", "🧀", "🥐", "🍞", "🥑", "🍐", "🥝",
+    ],
+  },
+  {
+    id: "superheroes",
+    label: "גיבורי על",
+    emoji: "🦸",
+    isImage: true,
+    dir: "images/superheros/",
+    cards: [
+      "spiderman.webp", "Spidey.webp", "blackSpydey.webp", "GhostSpider.webp", "allSpydey.jpg",
+      "batman.webp", "superman.jpg", "wonderwoman.jpeg", "hulk.webp", "ironamn.jpeg",
+      "captinAmerica.jpg", "greenGoblin.jpg", "rhino.jpeg", "womenVelin.jpg", "Catboy.webp",
+      "Gekko.webp", "pjMsdkOerl.webp", "psmasks.jpg", "romeo.jpg", "Night_Ninja.webp",
     ],
   },
   {

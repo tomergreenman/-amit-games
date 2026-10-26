@@ -1,5 +1,5 @@
 // Simple offline cache. Bump CACHE when any asset changes.
-const CACHE = "amit-games-v1";
+const CACHE = "amit-games-v2";
 
 const ASSETS = [
   "./",
@@ -19,6 +19,26 @@ const ASSETS = [
   "./icons/icon-192.png",
   "./icons/icon-512.png",
   "./icons/icon-512-maskable.png",
+  "./images/superheros/Catboy.webp",
+  "./images/superheros/Gekko.webp",
+  "./images/superheros/GhostSpider.webp",
+  "./images/superheros/Night_Ninja.webp",
+  "./images/superheros/Spidey.webp",
+  "./images/superheros/allSpydey.jpg",
+  "./images/superheros/batman.webp",
+  "./images/superheros/blackSpydey.webp",
+  "./images/superheros/captinAmerica.jpg",
+  "./images/superheros/greenGoblin.jpg",
+  "./images/superheros/hulk.webp",
+  "./images/superheros/ironamn.jpeg",
+  "./images/superheros/pjMsdkOerl.webp",
+  "./images/superheros/psmasks.jpg",
+  "./images/superheros/rhino.jpeg",
+  "./images/superheros/romeo.jpg",
+  "./images/superheros/spiderman.webp",
+  "./images/superheros/superman.jpg",
+  "./images/superheros/womenVelin.jpg",
+  "./images/superheros/wonderwoman.jpeg",
 ];
 
 self.addEventListener("install", (e) => {

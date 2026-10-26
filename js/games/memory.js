@@ -69,6 +69,7 @@ function buildDeck(pairs, subjectId) {
         uid: key + "-" + n + "-" + idx,
         key,
         isColor: !!subject.isColor,
+        img: subject.isImage ? subject.dir + card : null,
         card,
       });
     }
@@ -162,6 +163,8 @@ export function MemoryGame({ config, onExit, onNewGame }) {
               <div class="mcard-face mcard-front">
                 ${c.isColor
                   ? html`<div class="swatch" style=${{ background: c.card.color }}></div>`
+                  : c.img
+                  ? html`<img class="pic" src=${c.img} alt="" draggable="false" />`
                   : html`<span>${c.card}</span>`}
               </div>
             </div>
