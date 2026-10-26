@@ -160,13 +160,16 @@ export function MemoryGame({ config, onExit, onNewGame }) {
           >
             <div class="mcard-inner">
               <div class="mcard-face mcard-back">★</div>
-              <div class="mcard-face mcard-front">
-                ${c.isColor
-                  ? html`<div class="swatch" style=${{ background: c.card.color }}></div>`
-                  : c.img
-                  ? html`<img class="pic" src=${c.img} alt="" draggable="false" />`
-                  : html`<span>${c.card}</span>`}
-              </div>
+              ${c.img
+                ? html`<div
+                    class="mcard-face mcard-front pic"
+                    style=${{ backgroundImage: "url('" + c.img + "')" }}
+                  ></div>`
+                : html`<div class="mcard-face mcard-front">
+                    ${c.isColor
+                      ? html`<div class="swatch" style=${{ background: c.card.color }}></div>`
+                      : html`<span>${c.card}</span>`}
+                  </div>`}
             </div>
           </div>
         `;
