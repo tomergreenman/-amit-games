@@ -1,5 +1,5 @@
 // Simple offline cache. Bump CACHE when any asset changes.
-const CACHE = "amit-games-v2";
+const CACHE = "amit-games-v3";
 
 const ASSETS = [
   "./",
