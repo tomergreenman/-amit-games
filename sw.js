@@ -1,5 +1,5 @@
 // Simple offline cache. Bump CACHE when any asset changes.
-const CACHE = "amit-games-v4";
+const CACHE = "amit-games-v2";
 
 const ASSETS = [
   "./",
@@ -58,14 +58,16 @@ self.addEventListener("activate", (e) => {
 
 self.addEventListener("fetch", (e) => {
   if (e.request.method !== "GET") return;
-  // Network first so updates show up right away; cache is the offline fallback.
   e.respondWith(
-    fetch(e.request)
-      .then((res) => {
-        const copy = res.clone();
-        caches.open(CACHE).then((c) => c.put(e.request, copy)).catch(() => {});
-        return res;
-      })
-      .catch(() => caches.match(e.request).then((hit) => hit || caches.match("./index.html")))
+    caches.match(e.request).then((hit) => {
+      if (hit) return hit;
+      return fetch(e.request)
+        .then((res) => {
+          const copy = res.clone();
+          caches.open(CACHE).then((c) => c.put(e.request, copy)).catch(() => {});
+          return res;
+        })
+        .catch(() => caches.match("./index.html"));
+    })
   );
 });
